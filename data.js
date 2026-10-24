@@ -1,6 +1,10 @@
 // ChatWave demo data — local sample data only, no real WhatsApp users.
 (function () {
   var chats = [
+    { id: 'aiza', name: 'Aiza', type: 'chat', online: true, unread: 1, color: '#e91e63', messages: [
+      { from: 'me', text: 'Tera sath rehna meri life ki sab se bari khushi hai. ❤️', time: '18:30', ticks: 2, starred: false },
+      { from: 'them', text: 'Meri life ki bhi sab se bari khushi tum ho. ❤️', time: '18:31', ticks: 2, starred: false }
+    ]},
     { id: 'ahmed', name: 'Ahmed Raza', type: 'chat', online: true, unread: 2, color: '#00a884', messages: [
       { from: 'them', text: 'Assalam o Alaikum! Kal match dekhna hai?', time: '09:12', ticks: 2, starred: false },
       { from: 'me', text: 'Walaikum Assalam, haan zaroor! 7 baje?', time: '09:15', ticks: 2, starred: false },
