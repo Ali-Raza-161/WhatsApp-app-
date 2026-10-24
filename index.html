@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ChatWave — WhatsApp-style Chat Demo</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="logo">💬 <strong>ChatWave</strong></div>
+  <div class="topbar-note">Demo only — not WhatsApp, not connected to WhatsApp</div>
+</header>
+<main class="app">
+  <aside class="sidebar">
+    <div class="side-header">
+      <div class="avatar me" id="myAvatar">M</div>
+      <div class="side-title">Chats</div>
+      <button id="newChatBtn" class="icon-btn" title="New chat / group">＋ New</button>
+    </div>
+    <div class="search-box">
+      <input id="searchInput" type="text" placeholder="Search or start new chat" aria-label="Search chats">
+    </div>
+    <div class="tabs" role="tablist">
+      <button class="tab active" data-tab="chats">Chats</button>
+      <button class="tab" data-tab="status">Status</button>
+      <button class="tab" data-tab="calls">Calls</button>
+      <button class="tab" data-tab="starred">⭐ Starred</button>
+    </div>
+    <div id="chatList" class="chat-list"></div>
+    <div id="sideInfo" class="side-info"></div>
+    <form id="newChatForm" class="new-chat-form hidden">
+      <h3>New chat / group</h3>
+      <input id="newName" type="text" placeholder="Name, e.g. Hassan Ali" required>
+      <select id="newType">
+        <option value="chat">Chat</option>
+        <option value="group">Group</option>
+      </select>
+      <button type="submit">Create chat</button>
+      <button type="button" id="cancelNewBtn">Cancel</button>
+      <p class="form-note">This creates a local demo chat only.</p>
+    </form>
+  </aside>
+
+  <section class="conversation" id="conversation">
+    <div id="welcome" class="welcome">
+      <div class="welcome-icon">💬</div>
+      <h2>ChatWave Web</h2>
+      <p>Select a chat on the left to start messaging.<br>Send a message and the contact will reply automatically — this is a demo simulation.</p>
+      <p class="welcome-note">Messages are saved in this browser only (localStorage). No messages are sent to real WhatsApp users.</p>
+    </div>
+    <div id="chatView" class="chat-view hidden">
+      <div class="chat-header">
+        <div class="avatar" id="chatAvatar">A</div>
+        <div class="chat-header-text">
+          <strong id="chatName">Name</strong>
+          <span id="chatStatus">online</span>
+        </div>
+        <span id="typingIndicator" class="typing hidden">typing…</span>
+      </div>
+      <div id="messages" class="messages"></div>
+      <div id="emojiPicker" class="emoji-picker hidden"></div>
+      <form id="messageForm" class="message-form">
+        <button type="button" id="emojiBtn" title="Emoji">😊</button>
+        <input id="messageInput" type="text" placeholder="Type a message" autocomplete="off" aria-label="Type a message">
+        <button type="submit" id="sendBtn" title="Send">➤</button>
+      </form>
+    </div>
+  </section>
+</main>
+<footer class="footer">
+  <strong>Honest note:</strong> ChatWave is a UI + local demo clone. It is NOT WhatsApp, NOT connected to WhatsApp or Meta, does NOT send messages to real WhatsApp users, and does NOT use the WhatsApp Business API. Simulated replies are canned demo replies. Real multi-user chat would need a server, accounts, and end-to-end encryption.
+</footer>
+<script src="data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
